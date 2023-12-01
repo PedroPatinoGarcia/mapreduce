@@ -5,6 +5,8 @@ import sys
 salesTotal = 0
 oldKey = None
 
+dic = {}
+
 # Loop around the data
 # It will be in the format key\tval
 # Where key is the store name, val is the sale amount
@@ -21,15 +23,12 @@ for line in sys.stdin:
     thisKey, thisSale = data_mapped
 
     # Escribe un par key:value ante un cambio na key
-    # Reinicia o total
-    if oldKey and oldKey != thisKey:
-        print(oldKey+"\t"+str(salesTotal))
-        oldKey = thisKey;
-        salesTotal = 0
+    
+       if thisKey in dic:
+	oldSale =  dic[thisKey]
+	if thisSale > oldSale
+		dicc.update({thisKey,thisSale})
+    else
+	dic.update({thisKey,thisSale})
 
-    oldKey = thisKey
-    salesTotal += float(thisSale)
-
-# Escribe o ultimo par, unha vez rematado o bucle
-if oldKey != None:
-    print(oldKey+"\t"+str(salesTotal))
+print(dic)
